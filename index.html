@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <meta name="description" content="Projeto de Checkout">
+
+  <link rel="stylesheet" href="./style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card-container">
+      <div class="front">
+        <div class="image">
+          <img src="imagens/chip.png" alt="" class="chip-card">
+          <img src="imagens/mastercard.png" alt="" class="bandeira-card">
+        </div>
+
+        <div class="card-number-box">1234 5678 9101 1121</div>
+        <div class="flexbox">
+          <div class="box">
+            <span>Titular do Cartão</span>
+            <div class="card-holder-name">Nome do titular</div>
+          </div>
+          <div class="box1">
+            <span>Validade</span>
+            <div class="expiration">
+              <span class="exp-month">mm/aa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="back">
+        <div class="stripe"></div>
+        <div class="box">
+          <span>cvv</span>
+          <div class="cvv-box"></div>
+        </div>
+      </div>
+    </div>
+
+    <form action="">
+      <div class="inputBox">
+        <span>Número do Cartão</span>
+        <input type="text" maxlength="16" class="card-number-input" placeholder="1234 1234 1234 1234">
+      </div>
+      <div class="inputBox">
+        <span>Nome no Cartão</span>
+        <input type="text" class="card-holder-input" placeholder="Nome do titular">
+      </div>
+      <div class="flexbox">
+        <div class="inputBox">
+          <span>Data de expiração</span>
+          <input type="text" maxlength="7" class="month-input" placeholder="01/2027">
+        </div>
+
+        <div class="inputBox">
+          <span>CVV</span>
+          <input type="text" maxlength="4" class="cvv-input">
+        </div>
+      </div>
+      <input type="submit" value="Comprar agora →" class="submit-btn">
+    </form>
+
+
+  </div>
+
+  <footer>
+
+  </footer>
+
+  <script>
+
+    document.querySelector('.card-number-input').oninput = () => {
+      document.querySelector('.card-number-box').innerText = document.querySelector('.card-number-input').value;
+    }
+
+    document.querySelector('.card-holder-input').oninput = () => {
+      document.querySelector('.card-holder-name').innerText = document.querySelector('.card-holder-input').value;
+    }
+
+    document.querySelector('.month-input').oninput = () => {
+      document.querySelector('.exp-month').innerText = document.querySelector('.month-input').value;
+    }
+
+    document.querySelector('.cvv-input').onmouseenter = () => {
+      document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(-180deg)';
+      document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(0deg)';
+    }
+
+    document.querySelector('.cvv-input').onmouseleave = () => {
+      document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(0deg)';
+
+      document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(180deg)';
+    }
+
+    document.querySelector('.cvv-input').oninput = () => {
+      document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
+    }
+
+  </script>
+
+</body>
+
+</html>
