@@ -71,7 +71,6 @@
 }
 
 .container form .submit-btn {
-  width: 100%;
   background: #000000;
   color: #eee;
   padding: 15px;
@@ -79,8 +78,6 @@
   margin-bottom: 10px;
   border-radius: 10px;
   cursor: pointer;
-  transition: 0.2s linear;
-  break-before: 5px;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -248,7 +245,13 @@
 
 /* MODO RESPONSIVO */
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
   .container {
     background-color: #2b2b2b;
     display: flex;
@@ -262,7 +265,7 @@
     background: #fff;
     border-radius: 15px;
     padding: 20px;
-    width: 300px;
+    width: 350px;
     padding-top: 100px;
     border: 1px solid gray;
   }
