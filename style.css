@@ -71,6 +71,7 @@
 }
 
 .container form .submit-btn {
+  width: 100%;
   background: #000000;
   color: #eee;
   padding: 15px;
@@ -245,27 +246,24 @@
 
 /* MODO RESPONSIVO */
 
-@media (max-width: 767px) {
-  input,
-  select,
-  textarea {
-    font-size: 16px;
-  }
-
-  .container {
+@media (max-width: 480px) {
+  body {
     background-color: #2b2b2b;
+    padding: 0px;
+    margin: 0px;
+  }
+  .container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-flow: column;
-    padding-bottom: 60px;
+    justify-content: start;
   }
 
   .container form {
+    box-sizing: border-box;
     background: #fff;
     border-radius: 15px;
     padding: 20px;
-    width: 350px;
+    width: 340px;
     padding-top: 100px;
     border: 1px solid gray;
   }
@@ -321,9 +319,6 @@
     margin-top: 25px;
     margin-bottom: 10px;
     border-radius: 10px;
-    cursor: pointer;
-    transition: 0.2s linear;
-    break-before: 5px;
     text-transform: uppercase;
     font-weight: 600;
   }
@@ -333,8 +328,6 @@
   }
 
   .container .card-container {
-    margin-top: 55px;
-    margin-bottom: -90px;
     position: relative;
     height: 200px;
     width: 300px;
@@ -351,7 +344,6 @@
     border-radius: 25px;
     backface-visibility: hidden;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-    padding: 20px;
     transform: perspective(1000px) rotateY(0deg);
     transition: transform 0.4s ease-out;
   }
