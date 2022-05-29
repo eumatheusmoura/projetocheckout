@@ -30,14 +30,14 @@
 .container form .inputBox {
   margin-top: 20px;
   font-size: 12px;
-  text-transform: uppercase;
 }
 
 .container form .inputBox span {
   font-weight: 500;
   display: block;
-  color: #999;
+  color: #273236;
   padding-bottom: 5px;
+  font-size: 13px;
 }
 
 .container form .inputBox input,
@@ -46,7 +46,8 @@
   height: 45px;
   padding: 10px;
   border-radius: 5px;
-  background-color: #f2f2f6;
+  background-color: #f3f4f6;
+  border: 1px solid #e2e3e4;
 }
 
 .container form .inputBox input:focus,
@@ -81,6 +82,19 @@
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+.container form p {
+  width: 100%;
+  background: #000000;
+  color: #eee;
+  padding: 15px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
 }
 
 .container form .submit-btn:hover {
@@ -246,71 +260,7 @@
 
 /* MODO RESPONSIVO */
 
-@media (max-width: 480px) {
-  body {
-    background-color: #2b2b2b;
-    padding: 0px;
-    margin: 0px;
-  }
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-  }
-
-  .container form {
-    box-sizing: border-box;
-    background: #fff;
-    border-radius: 15px;
-    padding: 20px;
-    width: 340px;
-    padding-top: 100px;
-    border: 1px solid gray;
-  }
-
-  .container form .inputBox {
-    margin-top: 20px;
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-
-  .container form .inputBox span {
-    font-weight: 500;
-    display: block;
-    color: #999;
-    padding-bottom: 5px;
-  }
-
-  .container form .inputBox input,
-  .container form .inputBox select {
-    width: 100%;
-    height: 45px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #f2f2f6;
-  }
-
-  .container form .inputBox input:focus,
-  .container form .inputBox select:focus {
-    border: 1.5px solid black;
-    background-color: #ffff;
-    font-size: 15px;
-  }
-
-  .container form .inputBox input:focus::placeholder,
-  .container form .inputBox select input:focus::placeholder {
-    color: transparent;
-  }
-
-  .container form .flexbox {
-    display: flex;
-    gap: 15px;
-  }
-
-  .container form .flexbox .inputBox {
-    flex: 1 1 150px;
-  }
-
+@media (max-width: 800px) {
   .container form .submit-btn {
     width: 100%;
     background: #000000;
@@ -319,165 +269,20 @@
     margin-top: 25px;
     margin-bottom: 10px;
     border-radius: 10px;
+    cursor: pointer;
     text-transform: uppercase;
     font-weight: 600;
   }
 
-  .container form .submit-btn:hover {
-    opacity: 0.8;
-  }
-
-  .container .card-container {
-    position: relative;
-    height: 200px;
-    width: 300px;
-  }
-
-  .container .card-container .front {
-    position: absolute;
-    height: 100%;
+  .container form p {
     width: 100%;
-    top: 0;
-    left: 0;
-    background: #a12feb;
-    border: 1.5px solid rgba(0, 0, 0, 0.2);
-    border-radius: 25px;
-    backface-visibility: hidden;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-    transform: perspective(1000px) rotateY(0deg);
-    transition: transform 0.4s ease-out;
-  }
-
-  .container .card-container .front .image {
-    display: flex;
-    align-items: center;
-    padding-top: 10px;
-  }
-
-  .container .card-container .front .image img {
-    height: 35px;
-    margin-top: -25px;
-  }
-
-  .container .card-container .front .image .bandeira-card {
-    height: 60px;
-    margin-top: -25px;
-    margin-left: 160px;
-  }
-
-  .container .card-container .front .card-number-box {
-    padding: 10px 0;
-    font-size: 22px;
-    font-weight: 600;
-    color: #ffff;
-  }
-
-  .container .card-container .front .flexbox {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 15px;
-  }
-
-  .container .card-container .front .flexbox span {
-    text-transform: uppercase;
-    font-size: 0.6rem;
-    font-weight: 400;
-  }
-
-  .container .card-container .front .flexbox .expiration {
-    font-size: 0.6rem;
-    font-weight: 600;
-  }
-
-  .container .card-container .front .flexbox .box:nth-child(1) {
-    margin-right: 130px;
-  }
-
-  .container .card-container .front .flexbox .box,
-  .box1 {
-    font-size: 15px;
-    color: #ffff;
-  }
-
-  .container .card-container .front .flexbox .box .card-holder-name {
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-
-  .container .card-container .front .flexbox .box .card-holder-name {
-    text-transform: uppercase;
-    font-weight: 600;
-    width: 15em;
-    word-wrap: break-word;
-  }
-
-  .container .card-container .front .flexbox .box1 span {
-    margin-left: -150px;
-  }
-
-  .container .card-container .front .flexbox .box1 .exp-month {
-    font-size: 15px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-left: -150px;
-  }
-
-  /* PARTE TRASEIRA DO CARTAO */
-
-  .container .card-container .back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: #a12feb;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 30px;
-    padding: 20px 0;
-    text-align: right;
-    backface-visibility: hidden;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-    transform: perspective(1000px) rotateY(180deg);
-    transition: transform 0.4s ease-out;
-  }
-
-  .container .card-container .back .stripe {
-    background: #000;
-    width: 100%;
-    margin: 10px 0;
-    height: 50px;
-  }
-
-  .container .card-container .back .box {
-    padding: 0 20px;
-  }
-
-  .container .card-container .back .box span {
-    color: #fff;
-    font-size: 15px;
-  }
-
-  .container .card-container .back .box .cvv-box {
-    height: 50px;
-    padding: 10px;
-    margin-top: 5px;
-    color: #333;
-    background: #fff;
-    border-radius: 5px;
-    width: 100%;
-  }
-
-  .container .card-container .back .box img {
-    margin-top: 0px;
-    height: 30px;
-  }
-
-  .container .card-container .back .box span {
-    font-size: 20px;
-  }
-
-  .container .card-container .back .box .cvv-box {
+    background: #000000;
+    color: #eee;
+    padding: 15px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
     font-weight: 600;
   }
 }
